@@ -3,14 +3,14 @@
 
 # In[21]:
 
-
-get_ipython().system('pip install tensorflow')
-get_ipython().system('pip install keras')
+#you might need to import the below libraries, although I had installed tensorflow and keras using the command prompt I was still getting some errors.
+#get_ipython().system('pip install tensorflow')
+#get_ipython().system('pip install keras')
 
 
 # In[89]:
 
-
+#Importing Libraries for the neural network and visuals
 # importing the modules for the network
 import tensorflow as tf
 import keras
@@ -29,13 +29,13 @@ import seaborn as sn
 
 # In[41]:
 
-
+#importing the mnist dataset
 (X_train , y_train) , ( X_test, y_test) = keras.datasets.mnist.load_data()
 
 
 # In[42]:
 
-
+#Just checking the amount of data in the set
 len(y_train)
 
 
@@ -53,13 +53,13 @@ X_train[0]
 
 # In[45]:
 
-
+#printing out the picture in position 10 to see how it looks
 plt.matshow(X_train[10])
 
 
 # In[46]:
 
-
+#Comparing the picture and the output of the prediction
 y_train[10]
 
 
@@ -78,7 +78,7 @@ X_train.shape
 # In[62]:
 
 
-#scaling (devide each value bt 255 values will be betwwen zero and one) which will increase accurancy 
+#scaling (divide each value bt 255 values will be between zero and one) which will increase accuracy 
 X_train = X_train/ 255
 X_test = X_test/ 255
 
@@ -87,7 +87,7 @@ X_test = X_test/ 255
 
 
 #flattwerning the array 
-# did not flattern y_train/y_test because their simple array
+# did not flatten y_train/y_test because their simple array
 X_train_flattened = X_train.reshape(len(X_train),28*28)
 X_test_flattened = X_test.reshape(len(X_test),28*28)
 
@@ -113,16 +113,16 @@ X_test_flattened.shape
 # In[67]:
 
 
-#
+# crreatin the first layer of network
 model = keras.Sequential([
     keras.layers.Dense(10, input_shape=(784,),activation='sigmoid')  #connecting all other neurons in the input layer to the second layer
 ])
 # following is a crucial step in keras and tensorflow
-#compiling nueral network
-#add an optimizer to train the nueral network efficiently others are more efficient than others
+#compiling neural network
+#add an optimizer to train the neural network efficiently others are more efficient than others
 model.compile(
     optimizer ='adam',
-    loss = 'sparse_categorical_crossentropy',    #loss computes ther erros between the labels and predictions
+    loss = 'sparse_categorical_crossentropy',    #loss computes the errors between the labels and predictions
     metrics = ['accuracy'] # to increase accuracy
 )
 
@@ -176,7 +176,7 @@ cm
 # In[90]:
 
 
-#use seabon so that we can get visually appealing arrays
+#use seaborn so that we can get visually appealing arrays
 plt.figure(figsize = (10,7))
 sn.heatmap(cm, annot=True, fmt='d')
 plt.xlabel('Predicted')
@@ -207,7 +207,7 @@ model = keras.Sequential([
 
 model.compile(
     optimizer ='adam',
-    loss = 'sparse_categorical_crossentropy',    #loss computes ther erros between the labels and predictions
+    loss = 'sparse_categorical_crossentropy',    #loss computes the errors between the labels and predictions
     metrics = ['accuracy'] # to increase accuracy
 )
 
