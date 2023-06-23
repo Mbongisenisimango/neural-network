@@ -1,12 +1,11 @@
-# neural-network
-The code for this activity was written and executed in jupiter notebook. 
-Although it is saved as a .py file i suggesst you run it on Jupiter notebook
+Activity Description
+This activity involves code written and executed in Jupyter Notebook. Although the code is saved as a .py file, it is recommended to run it on Jupyter Notebook for optimal execution.
 
-#Libraries
-for the code to work fully you need to have the following installed in your machine:
-1. Python
-2. Tensorflow
-3. keras
-4. seaborn
-5. also you might also need to install the pip framework if that isnt yet installed in your pc,
-   if its installed already try and check if its up to date.
+Requirements
+To ensure the code functions properly, please make sure the following libraries are installed on your machine:
+
+Python
+TensorFlow
+Keras
+Seaborn
+Additionally, you may need to install the pip framework if it is not already installed on your computer. If pip is already installed, please ensure it is up to date for the best results.
